@@ -9,7 +9,7 @@ import os
 
 env = environ.Env()
 env.read_env(env.str('ENV_PATH', '.env'))
-goolge_key = env("GOOGLE_KEY", default="Key not found")
+google_key = env("GOOGLE_KEY", default="Key not found")
 
 
 # Create your views here.
@@ -22,9 +22,14 @@ class GoogleAPIView(APIView):
         })
 
     def _get_google_response(self, message):
-        client = genai.Client(api_key=goolge_key)
-        response = client.models.generate_content(
-            model="gemini-2.0-flash", contents=message
-        )
-        return response.text
+        if google_key is None or google_key == "Key not found":
+            return "Google Key Not Found"
+        try:
+            client = genai.Client(api_key=google_key)
+            response = client.models.generate_content(
+                model="gemini-2.0-flash", contents=message
+            )
+            return response.text
+        except Exception as e:
+            return f"An error occurred: {str(e)}"
 
