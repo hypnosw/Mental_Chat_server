@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wjowobq@oa&_h!mskwbcut-sjlvv3j0)(p3s!o31r6l6fr93)+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mental-chat-server.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
