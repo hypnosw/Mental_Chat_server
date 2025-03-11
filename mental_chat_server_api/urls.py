@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .views import HelloWorldAPIView
+from .views import GoogleAPIView
 
 urlpatterns = [
-    path('hello/', HelloWorldAPIView().as_view(), name="hello-world"),
+    path('googling', GoogleAPIView().as_view(), name="Google-Chat"),
 ]
