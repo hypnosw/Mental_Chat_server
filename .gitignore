@@ -1,1 +1,29 @@
+
+# Virtual environment
+venv/
+.env/
+*.venv
+
+# Django-related files
+db.sqlite3
+instance/
+media/
+staticfiles/
+
+# Environment variables and secrets
 .env
+*.env
+
+# Logs and debugging files
+*.log
+logs/
+debug.log
+
+# Ignore migrations compiled cache
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Ignore IDE/editor config files
+.vscode/
+.idea/
+*.sublime-workspace
